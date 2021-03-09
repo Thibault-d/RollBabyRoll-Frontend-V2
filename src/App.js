@@ -7,7 +7,7 @@ import Menu from "./components/Menu/Menu.js";
 export default function App() {
   return (
     <div className="App">
-      <Header />
+       <Header />
       <div className="Menu">
         <Menu />
       </div>
