@@ -1,0 +1,25 @@
+.Header {
+  background-color: greenyellow;
+  height: 10vh;
+}
+
+.Menu {
+  background-color: pink;
+  width: 20%;
+}
+
+.Workspace {
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.Comparator {
+  width: 100%;
+  background-color: lightskyblue;
+}
+
+.ActionBar{
+    height: 50px;
+    background-color: white;
+}
