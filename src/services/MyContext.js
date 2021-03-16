@@ -3,13 +3,21 @@ import apiClient from "../services/StrollersApi.js";
 
 const StrollerContext = React.createContext();
 
-const StrollerProvider = StrollerContext.Provider;
-// const TodosConsumer = TodosContext.Consumer
-
 class MyContext extends Component {
-  state = {
-    allStrollers: [],
-  };
+  constructor(props) {
+    super(props);
+    this.filterStrollers = this.filterStrollers.bind(this);
+    this.state = {
+      allStrollers: [],
+      update: this.filterStrollers,
+    };
+  }
+
+  filterStrollers(values) {
+    this.setState({
+      allStrollers: values,
+    });
+  }
 
   loadStrollers() {
     apiClient
@@ -27,11 +35,10 @@ class MyContext extends Component {
   }
 
   render() {
-    console.log("context", this.state.allStrollers);
     return (
-      <StrollerProvider value={this.state.allStrollers}>
+      <StrollerContext.Provider value={{ ...this.state }}>
         {this.props.children}
-      </StrollerProvider>
+      </StrollerContext.Provider>
     );
   }
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
-import Header from "./components/Header/Header.js";
-import Menu from "./components/Menu/Menu.js";
+import Header from "./components/Header.js";
+import Menu from "./components/Menu.js";
+import Search from "./components/Search.js";
 import Strollers from "./views/Strollers";
-import {MyContext} from "./services/MyContext.js";
+import { MyContext } from "./services/MyContext.js";
 
 export default function App() {
   return (
@@ -18,7 +19,10 @@ export default function App() {
             <Menu />
           </div>
           <div className="Comparator">
-            <div className="ActionBar"></div>
+            <div className="ActionBar">
+              <Search />
+            </div>
+
             <Switch>
               <Route exact path="/" component={() => <Strollers />} />
               {/*<Route
